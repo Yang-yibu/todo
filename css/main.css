@@ -1,0 +1,117 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+html {
+  font-size: 100px;
+}
+
+body {
+  font-size: 16px;
+  background: #999;
+}
+
+@media screen and (min-width: 320px) {
+  html {
+    font-size: 42.66667px;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  html {
+    font-size: 48px;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  html {
+    font-size: 50px;
+  }
+}
+
+.header {
+  width: 100%;
+  height: 1rem;
+  padding: 0.2rem;
+  border-bottom: 0.1px solid #000;
+}
+
+.header input {
+  width: 100%;
+  height: 0.6rem;
+  background: #fff;
+  padding-left: 0.2rem;
+  border: 0;
+  outline: none;
+  line-height: 0.9rem;
+  border-radius: 0.2rem;
+}
+
+.header .add {
+  width: 0.4rem;
+  height: 0.4rem;
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: 0.4rem;
+}
+
+.ul {
+  padding: 0.2rem;
+}
+
+.ul li {
+  background: #fff;
+  padding-left: 0.2rem;
+  margin: 0.2rem 0;
+  border-radius: 0.2rem;
+}
+
+.ul li .content {
+  width: 100%;
+  height: 1rem;
+  line-height: 1rem;
+}
+
+.ul li .delete {
+  width: 0.4rem;
+  height: 0.4rem;
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: 0.4rem;
+}
+
+.ul li.done .content {
+  color: #666666;
+  text-decoration: line-through;
+}
+
+.foot {
+  width: 100%;
+  overflow: hidden;
+}
+
+.foot div {
+  width: 33.333%;
+  height: 1rem;
+  padding: 0 0.1rem;
+  line-height: 1rem;
+  float: left;
+  text-align: center;
+}
+
+.foot div p {
+  height: 100%;
+  background: #fff;
+  border-radius: 0.2rem;
+}

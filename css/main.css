@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -11,6 +12,7 @@ html {
 
 body {
   font-size: 16px;
+  font-family: "楷体", sans-serif;
   background: #999;
 }
 
@@ -62,6 +64,54 @@ body {
   right: 0.4rem;
 }
 
+/* 侧边 */
+.cebian {
+  width: 6.3rem;
+  height: 12rem;
+  background: #FAFAFA;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: auto;
+}
+
+.cebian .logo {
+  width: 100%;
+  padding: 0.5rem;
+  background: #536f7a;
+  color: #fff;
+  overflow: hidden;
+}
+
+.cebian .logo #touxiang {
+  overflow: hidden;
+}
+
+.cebian .logo #touxiang .touxiang {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #f5f3cd;
+  border-radius: 50%;
+  float: left;
+}
+
+.cebian .logo #touxiang .name {
+  margin: 0.5rem;
+  float: left;
+  position: absolute;
+  left: 1.7rem;
+  bottom: 0;
+  margin: auto;
+  font-size: 0.38rem;
+}
+
+.cebian .logo .xinxi {
+  margin-top: 0.2rem;
+  float: left;
+  font-size: 0.2rem;
+}
+
+/* end */
 .ul {
   padding: 0.2rem;
 }

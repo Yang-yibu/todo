@@ -74,9 +74,9 @@ $design-width: 750px;
     left: 0;
     top: 0;
     overflow: auto;
+    transform: translateX(-100%);
     .logo{
         width: 100%;
-//      height: 3rem;
         padding: 0.5rem;
         background: #536f7a;
         color: #fff;
@@ -103,11 +103,50 @@ $design-width: 750px;
         .xinxi{
             margin-top: 0.2rem;
             float: left;
-            font-size: 0.2rem;
+            font-size: 0.28rem;
+        }
+    }
+    
+    .caidan, .shezhi{
+        padding-top: 0.2rem;
+        border-bottom: 1px solid #f1f3f0;
+        font-size: 16px;
+        li{
+            padding: 0.1rem 0.2rem;
+            border-bottom: 1px dashed #f1f3f0;
+            line-height: 0.5rem;
+        }
+        li:last-child{
+            border-bottom: 0;
         }
     }
 }
+/* 选中状态 */
+.xuan{
+    background: #e54d1b;
+    color: #fff;
+}
+.animate{
+    animation: cebian-move 0.5s .2s ease forwards;
+}
+@keyframes cebian-move{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
 /* end */
+i.icon{
+    width: 0.5rem;
+    height: 0.5rem;
+    display: inline-block;
+    background: #3ab8e1;
+    vertical-align: bottom;
+    line-height: 0.5rem;
+}
+
 
 .ul{
     padding: 0.2rem;
@@ -138,16 +177,16 @@ $design-width: 750px;
     overflow: hidden;
     div{
         width: 33.333%;
-        height: 1rem;
-       
         padding: 0 0.1rem;
-        line-height: 1rem;
+        margin: 0.2rem 0;
+        line-height: 0.6rem;
         float: left;
         text-align: center;
         p{
             height: 100%;
-            background: #fff;
-            border-radius: 0.2rem;
+            background: #536f7a;
+            border-radius: 0.1rem;
+            color: #fff;
         }
     }
 }

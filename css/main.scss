@@ -5,18 +5,19 @@
     box-sizing: border-box;
     position: relative;
 }
-
+$font-fa: "楷体", sans-serif;
+$d-list: 320px, 360px, 375px;
+$design-width: 750px;
 html{
     font-size: 100px;
 }
 body{
     font-size: 16px;
-    font-family:  "楷体", sans-serif;
+    font-family:  $font-fa;
     background: #999;
 }
 
-$d-list: 320px, 360px, 375px;
-$design-width: 750px;
+
 @each $w in $d-list{
     @media screen and (min-width: #{$w}){
         html{
@@ -45,36 +46,103 @@ $design-width: 750px;
     @include top-bottom;
     right: 0.4rem;
 }
+
+.lis{
+    height: 16rem;
+}
 .header{
     width: 100%;
-    height: 1rem;
     padding: 0.2rem;
-    border-bottom: 0.1px solid #000;
-    input{
-        width: 100%;
-        height: 0.6rem;
-        background: #fff;
-        padding-left: 0.2rem;
-        border: 0;
-        outline: none;
-        line-height: 0.9rem;
-        border-radius: 0.2rem;
+    background: #344561;
+    overflow: hidden;
+    color: #fff;
+    font-size: 0.5rem;
+    .header-left, .header-right{
+        float: left;
+        line-height: 1.2rem;
+        .icon{
+            vertical-align: middle;
+        }
     }
-    .add{
-        @include add;
+    .header-right{
+        float: right;
     }
 }
 
+
+.tianjia{
+    transform: translate(0, -100%) scale(0);
+    transition: all 0.5s;
+    width: 7rem;
+    height: auto;
+    background: #F0F0F0;
+    position: fixed;
+    top: 20%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 9;
+    border-radius: 0.1rem;
+    overflow: hidden;
+    text-align: center;
+    .add-title{
+        height: 1.2rem;
+        background: #344561;
+        line-height: 1.2rem;
+        font-size: 0.5rem;
+        color: #fff;
+    }
+    & > input{
+        width: 80%;
+        border: 0;
+        margin: 0.3rem 0;
+        background: #F0F0F0;
+        border-bottom: 2px solid #000;
+        outline: none;
+        line-height: 0.6rem;
+        font-size: 0.4rem;
+        font-family: $font-fa;
+    }
+    .xuanze{
+        width: 80%;
+        height: 0.8rem;
+        margin: 0.3rem auto;
+        line-height: 0.8rem;
+        font-size: 0.3rem;
+        & > div{
+            width: 45%;
+            float: left;
+            background: #fff;
+            border-radius: 0.1rem;
+            box-shadow: 0 1px 10px #999;
+        }
+        & > div.no{
+            float: right;
+        }
+    }
+}
+
+.tianjia-ani{
+    transform: translate(0) scale(1);
+}
+
 /* 侧边 */
-.cebian{
-    width: 6.3rem;
-    height: 12rem;
-    background: #FAFAFA;
+.cebian-parent{
+    width: 100%;
+    height: 16rem;
     position: fixed;
     left: 0;
     top: 0;
-    overflow: auto;
+    z-index: 99;
     transform: translateX(-100%);
+    transition: all 0.5s;
+}
+.cebian{
+//  display: none;
+    width: 6.3rem;
+    height: 100%;
+    background: #FAFAFA;
+    overflow: auto;
     .logo{
         width: 100%;
         padding: 0.5rem;
@@ -121,15 +189,29 @@ $design-width: 750px;
         }
     }
 }
+.menu{
+    padding: 0.1rem 0.2rem;
+    border-bottom: 1px dashed #f1f3f0;
+    line-height: 0.5rem;
+}
 /* 选中状态 */
 .xuan{
     background: #e54d1b;
     color: #fff;
 }
 .animate{
-    animation: cebian-move 0.5s .2s ease forwards;
+//  animation: cebian-move 0.5s .2s ease forwards;
+    transform: translateX(0);
 }
 @keyframes cebian-move{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+@keyframes cebian-moveed{
     0%{
         transform: translateX(-100%);
     }

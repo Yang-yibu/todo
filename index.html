@@ -9,18 +9,14 @@
 		<script src="js/index.js"></script>
 	</head>
 	<body>
-		<div class="header">
-			<input type="text" value=""/>
-			<div class="add"></div>
-		</div>
-		
 		<!-- 侧边 -->
-		<div class="cebian animate">
+		<div class="cebian-parent">
+		<div class="cebian">
 			<div class="logo">
 				<div id="touxiang">
 					<div class="touxiang"></div>
 					<div class="name">
-						高效TODO
+						苹果TODO
 					</div>
 				</div>
 				<div class="xinxi">
@@ -41,15 +37,23 @@
 					<p>已完成</p>
 				</div>
 			</div>
+			<div class="menu">菜单</div>
 			<ul class="caidan">
-				<li>菜单</li>
 				<li>
 					<i class="icon"></i>
 					未来计划表
 				</li>
-				<li class="xuan">
+				<li>
 					<i class="icon"></i>
 					我的统计数据
+				</li>
+				<li>
+					<i class="icon"></i>
+					待办
+				</li>
+				<li>
+					<i class="icon"></i>
+					备忘录
 				</li>
 			</ul>
 			<ul class="shezhi">
@@ -58,18 +62,44 @@
 				<li>关于</li>
 			</ul>
 		</div>
+		</div>
 		<!-- end -->
 		
-		<ul class="ul">
-			<!--<li class="done">
-				<div class="content"></div>
-				<div class="delete"></div>
-			</li>
-			<li>
-				<div class="content"></div>
-				<div class="delete"></div>
-			</li>-->
-		</ul>
 		
+		<!-- 列表页 -->
+		<div class="lis">
+			<div class="header">
+				<div class="header-left">
+					<i class="icon"></i>
+					苹果ToDo
+				</div>
+				<div class="header-right">
+					<i class="icon"></i>
+				</div>
+			</div>
+			
+			<div class="tianjia">
+				<div class="add-title">
+					增加一个Todo
+				</div>
+				<input type="text" value="haha我来啦"/>
+				<div class="xuanze">
+					<div class="add">确定</div>
+					<div class="no">取消</div>
+				</div>
+			</div>
+		
+			<ul class="ul">
+				<!--<li class="done">
+					<div class="content"></div>
+					<div class="delete"></div>
+				</li>
+				<li>
+					<div class="content"></div>
+					<div class="delete"></div>
+				</li>-->
+			</ul>
+		</div>
+		<!-- end -->
 	</body>
 </html>

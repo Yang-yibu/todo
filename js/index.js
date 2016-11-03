@@ -16,14 +16,12 @@
  * 左划----未完成*/
 $(function(){
 	var add = $(".add");
-	
 	var todos = [];
 	
 	if(localStorage.todos){
 		todos = JSON.parse(localStorage.todos);
 		render();
 	}
-	
 	
 	add.on("click", function(){
 		var v = $("input").val();
@@ -38,9 +36,8 @@ $(function(){
 		todos.push(todo);
 		localStorage.todos = JSON.stringify(todos);
 		$("input").val("");  //去除上一次输入的内容，相当于焦事件
+		$(".tianjia").removeClass("tianjia-ani");
 	});
-	
-
 	
 	var start;
 	$(".ul").on("touchstart", "li", function(e){
@@ -79,4 +76,42 @@ $(function(){
 			$("<li class="+c+"><div class='content'>"+todos[i].name+"</div><div class='delete'></div></li>").appendTo(".ul");
 		}
 	}
+	
+//
+	$(".header-left .icon").click(function(){
+		$(".cebian-parent").addClass("animate");
+	});
+	$(".cebian-parent").click(function(e){
+		if(e.originalEvent.clientX > $(".cebian").width()){
+			$(".cebian-parent").removeClass("animate");
+		}
+	});
+	
+	$(document).on("touchstart", function(e){
+		start = e.originalEvent.changedTouches[0].clientX;
+	});
+	$(document).on("touchend", function(e){
+		end = e.originalEvent.changedTouches[0].clientX;
+		if(end - start){
+			if(start < 15){
+				$(".cebian-parent").addClass("animate");
+			}
+		}
+		if(end -start < -50){
+			$(".cebian-parent").removeClass("animate");
+		}
+	});
+	
+	$(".header-right .icon").click(function(){
+		$(".tianjia").addClass("tianjia-ani");
+	});
+	$(".no").click(function(){
+		$(".tianjia").removeClass("tianjia-ani");
+	});
+	
+	$(".cebian li").click(function(){
+		$(".cebian li").removeClass("xuan");
+		$(this).addClass("xuan");
+	});
+	
 });

@@ -60,15 +60,10 @@ body {
 
 .header .header-left .icon, .header .header-right .icon {
   vertical-align: middle;
-  transition: all 0.5s;
 }
 
 .header .header-right {
   float: right;
-}
-
-.header .icon:hover {
-  transform: rotate(360deg);
 }
 
 .tianjia {
@@ -169,11 +164,6 @@ body {
   background: #f5f3cd;
   border-radius: 50%;
   float: left;
-  overflow: hidden;
-}
-
-.cebian .logo #touxiang .touxiang img {
-  width: 100%;
 }
 
 .cebian .logo #touxiang .name {
@@ -214,10 +204,6 @@ body {
   line-height: 0.5rem;
 }
 
-.caidan .icon {
-  color: #3ab8e1;
-}
-
 /* 选中状态 */
 .xuan {
   background: #e54d1b;
@@ -251,9 +237,9 @@ i.icon {
   width: 0.5rem;
   height: 0.5rem;
   display: inline-block;
+  background: #3ab8e1;
   vertical-align: bottom;
   line-height: 0.5rem;
-  text-align: center;
   font-family: "iconfont" !important;
   font-size: 16px;
   font-style: normal;

@@ -3,6 +3,17 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width"></meat>
+		<!-- Add to homescreen for Safari on Ios -->
+		<meta name="apple-mobile-web-app-capable" content="yes"/>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+		<meta name="apple-mobile-web-app-title" 
+			content="todo"/>
+		<link rel="apple-touch-icon" href="logo.png" />
+		<!-- Add to homescreen for Chrome on Android -->
+		<meta name="mobile-web-app-capable" content="yes"/>
+		<meta name="application-name" content="tado"/>
+		<meta name="theme-color" content="#2f3ba2"/>
+		<link rel="icon" sizes="192x192" href="logo.png" />
 		<title>待办事项</title>
 		<link rel="stylesheet" href="css/main.css" />
 		<script src="js/jquery.js"></script>
@@ -14,7 +25,9 @@
 		<div class="cebian">
 			<div class="logo">
 				<div id="touxiang">
-					<div class="touxiang"></div>
+					<div class="touxiang">
+						<img src="./logo.png" alt="" />
+					</div>
 					<div class="name">
 						苹果TODO
 					</div>
@@ -40,13 +53,13 @@
 			<div class="menu">菜单</div>
 			<ul class="caidan">
 				<li>
-					<i class="icon"></i>
+					<i class="icon">&#xe62e;</i>
 					待办
 				</li>
-				<li>
+				<!--<li>
 					<i class="icon"></i>
 					备忘录
-				</li>
+				</li>-->
 			</ul>
 			<ul class="shezhi">
 				<li>打赏与支持</li>
@@ -62,11 +75,11 @@
 		<div class="lis">
 			<div class="header">
 				<div class="header-left">
-					<i class="icon"></i>
+					<i class="icon">&#xe7bd;</i>
 					苹果ToDo
 				</div>
 				<div class="header-right">
-					<i class="icon"></i>
+					<i class="icon">&#xe615;</i>
 				</div>
 			</div>
 			

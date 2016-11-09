@@ -15,7 +15,6 @@ body{
     font-size: 16px;
     font-family:  $font-fa;
     background: #999;
-    
 }
 
 
@@ -47,6 +46,15 @@ body{
     @include top-bottom;
     right: 0.4rem;
 }
+@font-face {
+  font-family: 'iconfont';
+  src: url('iconfont.eot');
+  src: url('iconfont.eot?#iefix') format('embedded-opentype'),
+  url('iconfont.woff') format('woff'),
+  url('iconfont.ttf') format('truetype'),
+  url('iconfont.svg#iconfont') format('svg');
+}
+///////////////////////////////////////////////
 
 .lis{
     height: 16rem;
@@ -63,13 +71,17 @@ body{
         line-height: 1.2rem;
         .icon{
             vertical-align: middle;
+//          transform: rotate(180deg);
+            transition: all 0.5s;
         }
     }
     .header-right{
         float: right;
     }
 }
-
+.header .icon:hover{
+    transform: rotate(360deg);
+}
 
 .tianjia{
     transform: translate(0, -100%) scale(0);
@@ -153,11 +165,15 @@ body{
         #touxiang{
             overflow: hidden;
             .touxiang{
-            width: 1.5rem;
-            height: 1.5rem;
-            background: #f5f3cd;
-            border-radius: 50%;
-            float: left;
+                width: 1.5rem;
+                height: 1.5rem;
+                background: #f5f3cd;
+                border-radius: 50%;
+                float: left;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                }
             }
             .name{
                 margin: 0.5rem;
@@ -195,6 +211,9 @@ body{
     border-bottom: 1px dashed #f1f3f0;
     line-height: 0.5rem;
 }
+.caidan .icon{
+    color: #3ab8e1;
+}
 /* 选中状态 */
 .xuan{
     background: #e54d1b;
@@ -225,9 +244,16 @@ i.icon{
     width: 0.5rem;
     height: 0.5rem;
     display: inline-block;
-    background: #3ab8e1;
+//  background: #3ab8e1;
     vertical-align: bottom;
     line-height: 0.5rem;
+    text-align: center;
+      font-family:"iconfont" !important;
+      font-size:16px;font-style:normal;
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-stroke-width: 0.2px;
+      -moz-osx-font-smoothing: grayscale;
+      
 }
 
 

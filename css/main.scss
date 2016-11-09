@@ -15,6 +15,7 @@ body{
     font-size: 16px;
     font-family:  $font-fa;
     background: #999;
+    
 }
 
 
@@ -231,16 +232,19 @@ i.icon{
 
 
 .ul{
-    padding: 0.2rem;
+    margin: 0.2rem;
     li{
         background: #fff;
         padding-left: 0.2rem;
         margin: 0.2rem 0;
         border-radius: 0.2rem;
         .content{
-            width: 100%;
+            width: 6.5rem;
             height: 1rem;
             line-height: 1rem;
+            padding-right: 1rem;
+            text-overflow: ellipsis;
+            overflow: hidden;
         }
         .delete{
             @include add;
@@ -264,11 +268,11 @@ i.icon{
         line-height: 0.6rem;
         float: left;
         text-align: center;
-        p{
+    }
+}
+ p{
             height: 100%;
             background: #536f7a;
             border-radius: 0.1rem;
             color: #fff;
         }
-    }
-}

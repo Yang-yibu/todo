@@ -70,14 +70,14 @@ $(function(){
 	
 //渲染
 	function render(){
-//		$(".ul").empty();
+		$(".ul").empty();
 		for(var i = 0; i<todos.length; i++){
 			var c = (todos[i].state)? "done": "";
 			$("<li class="+c+"><div class='content'>"+todos[i].name+"</div><div class='delete'></div></li>").appendTo(".ul");
 		}
 	}
 	
-//
+//侧边
 	$(".header-left .icon").click(function(){
 		$(".cebian-parent").addClass("animate");
 	});
@@ -86,7 +86,7 @@ $(function(){
 			$(".cebian-parent").removeClass("animate");
 		}
 	});
-	
+
 	$(document).on("touchstart", function(e){
 		start = e.originalEvent.changedTouches[0].clientX;
 	});
@@ -112,6 +112,22 @@ $(function(){
 	$(".cebian li").click(function(){
 		$(".cebian li").removeClass("xuan");
 		$(this).addClass("xuan");
+		$(".cebian-parent").removeClass("animate");
+		
 	});
+	$(".foot div p").click(function(){
+		$(".foot div p").removeClass("xuan");
+		$(this).addClass("xuan");
+		
+		$(".ul li").show();
+		var role = $(this).closest("div").attr("data-role");
+		if(role === "com"){
+			$(".ul").find("li:not(.done)").hide();
+		}else if(role ==="re"){
+			$(".ul").find(".done").hide();
+		}
+		$(".cebian-parent").removeClass("animate");
+	});
+	
 	
 });

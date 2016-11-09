@@ -237,7 +237,7 @@ i.icon {
 }
 
 .ul {
-  padding: 0.2rem;
+  margin: 0.2rem;
 }
 
 .ul li {
@@ -248,9 +248,12 @@ i.icon {
 }
 
 .ul li .content {
-  width: 100%;
+  width: 6.5rem;
   height: 1rem;
   line-height: 1rem;
+  padding-right: 1rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .ul li .delete {
@@ -284,7 +287,7 @@ i.icon {
   text-align: center;
 }
 
-.foot div p {
+p {
   height: 100%;
   background: #536f7a;
   border-radius: 0.1rem;

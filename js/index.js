@@ -17,6 +17,19 @@
 $(function(){
 	var add = $(".add");
 	var todos = [];
+	var start;
+	var end;
+	
+	/////////渲染/////////////////////////////////////////////////////
+	
+	function render(){
+		$(".ul").empty();
+		for(var i = 0; i<todos.length; i++){
+			var c = (todos[i].state)? "done": "";
+			$("<li class="+c+"><div class='content'>"+todos[i].name+"</div><div class='delete'></div></li>").appendTo(".ul");
+		}
+	}
+	///////////////////////////////////////////////////////////////////
 	
 	if(localStorage.todos){
 		todos = JSON.parse(localStorage.todos);
@@ -31,7 +44,6 @@ $(function(){
 		}
 		var todo = {name:"", state: 0}; 
 		todo.name = v;
-//		render()
 		$("<li><div class='content'>"+v+"</div><div class='delete'></div></li>").appendTo(".ul");
 		todos.push(todo);
 		localStorage.todos = JSON.stringify(todos);
@@ -39,20 +51,17 @@ $(function(){
 		$(".tianjia").removeClass("tianjia-ani");
 	});
 	
-	var start;
 	$(".ul").on("touchstart", "li", function(e){
 		start = e.originalEvent.changedTouches[0].clientX;
 	});
-	var end;
+	
 	$(".ul").on("touchend", "li", function(e){
 		end = e.originalEvent.changedTouches[0].clientX;
 		if(end - start > 50){
-//			todos = JSON.parse(localStorage.todos);
 			$(this).addClass("done");
 			todos[ $(this).index() ].state = 1;
 		}
 		if(end - start < -50){
-//			todos = JSON.parse(localStorage.todos);
 			$(this).removeClass("done");
 			todos[ $(this).index() ].state = 0;
 		}
@@ -67,15 +76,6 @@ $(function(){
 		$(this).closest("li").hide();
 		console.log(index)
 	})
-	
-//渲染
-	function render(){
-		$(".ul").empty();
-		for(var i = 0; i<todos.length; i++){
-			var c = (todos[i].state)? "done": "";
-			$("<li class="+c+"><div class='content'>"+todos[i].name+"</div><div class='delete'></div></li>").appendTo(".ul");
-		}
-	}
 	
 //侧边
 	$(".header-left .icon").click(function(){
